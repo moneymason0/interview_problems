@@ -21,6 +21,6 @@ let tempIndex = array.length-1; // Varilable to store the current index from the
 return array;
 }
 
-let array = [1,2,3,4, 6, 19, 20, 21, 25, 67, 8, 4, 5];
+let array = [1,2,3,4,6,19,20,21,25,67,8,4,5];
 console.log(array);
 console.log(reverseArray(array));
