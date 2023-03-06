@@ -1,0 +1,30 @@
+// Count the longest consecutive group of integers in a given input array
+
+// CURRENT SOLUTION
+    // Time Complexity O(n)
+    // Space Complexity O(n)
+
+function longestConsecutive(array) {
+        // Current Counter Variable that will store current count of consecutive numbers
+        let currentCounter;
+        // Max Counter Variable that will store the greatest count of consecutive numbers so far
+        let maxCounter = 0;
+
+        const hashSet = new Set(array); // Build Input Array into a Hash Table (Hash Set in this case)
+
+       // Loop through input array
+       for(let i = 0; i < array.length; i++) {
+                currentCounter = 1; // Reset Current Counter
+           // Keep iterating through as long as the next Consecutive Number exists in the array
+           while(hashSet.has(array[i] + currentCounter)){ 
+                    currentCounter++; // Increment Current counter variable
+                if (currentCounter > maxCounter)
+                    maxCounter = currentCounter;  // Save value from Current Counter Variable to Greatest Counter Variable
+           }
+         }
+    return maxCounter;
+}
+    
+let arr = [4, 20, 22, 10, 6, 71];
+let output = longestConsecutive(arr);
+console.log(`There are ${output} consecutive numbers in this array [${arr}]`);
